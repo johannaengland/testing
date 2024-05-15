@@ -7,6 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo A PR with number $NUMBER
-        env:
-          NUMBER: ${{ github.event.issue.number }} | 1
+          echo A PR with some number
