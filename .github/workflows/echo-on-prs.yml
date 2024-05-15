@@ -1,3 +1,5 @@
+name: Depending job
+
 on:
   workflow_run:
     workflows: ["Depend on this workflow"]
@@ -9,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo The workflow we're dependent on has run
+          echo Hello
