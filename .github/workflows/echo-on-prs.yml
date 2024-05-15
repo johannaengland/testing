@@ -1,5 +1,3 @@
-name: Depending job
-
 on:
   workflow_run:
     workflows: ["Depend on this workflow"]
@@ -8,7 +6,10 @@ on:
 
 jobs:
   depending-job:
+    name: "Depending job"
+    if: >
+      ${{ github.event }} && ${{ github.event.issue }}  ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo The workflow we're dependent on has run
+          echo Hello
