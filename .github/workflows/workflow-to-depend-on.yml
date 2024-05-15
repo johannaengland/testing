@@ -1,0 +1,12 @@
+name: Depend on this workflow
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Test test test
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo A PR with number $NUMBER
+        env:
+          NUMBER: ${{ github.event.issue.number }} | 1
