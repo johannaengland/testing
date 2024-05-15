@@ -7,8 +7,6 @@ on:
 jobs:
   depending-job:
     name: "Depending job"
-    if: >
-      ${{ github.event }} && ${{ github.event.issue }} && ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
       - run: |
