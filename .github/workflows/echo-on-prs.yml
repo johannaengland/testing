@@ -3,6 +3,7 @@ on:
     workflows: ["Depend on this workflow"]
     types:
       - completed
+    branches-ignore: ["main"]
 
 jobs:
   depending-job:
