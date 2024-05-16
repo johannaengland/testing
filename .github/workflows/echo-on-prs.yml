@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo I depend on the previous workflow
+          echo ${{ github.event.workflow_run }}
