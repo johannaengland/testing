@@ -6,5 +6,4 @@ jobs:
     name: "Test test test"
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo Depend on this workflow
+      - run: exit 1
