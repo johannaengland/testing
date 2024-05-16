@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo ${{ github.event.workflow_run.triggering_actor }}
+          echo ${{ github.event.workflow_run.event.name }}
