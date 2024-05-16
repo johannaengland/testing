@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo A PR with some number
+          echo Depend on this workflow
