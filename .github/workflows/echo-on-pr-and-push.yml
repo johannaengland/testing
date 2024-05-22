@@ -16,4 +16,4 @@ jobs:
           fi
       - run: echo "$VALIDATE_ALL_CODEBASE, $SECOND_VALIDATE"
         env: 
-          SECOND_VALIDATE: ${{github.event_name}}==push
+          SECOND_VALIDATE: ${{ github.event_name == 'push'}}
