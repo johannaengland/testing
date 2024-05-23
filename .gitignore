@@ -8,7 +8,7 @@ build/
 dist/
 
 # Generated files
-src/zino/version.py
+src/testing/version.py
 .coverage
 *.pyc
 *.egg-info/

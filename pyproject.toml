@@ -46,4 +46,4 @@ exclude = ["tests*"]
 "*" = ["tests/"]
 
 [tool.setuptools_scm]
-write_to = "src/zino/version.py"
+write_to = "src/testing/version.py"
