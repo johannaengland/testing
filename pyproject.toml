@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Testing"
+version = "1.0.0"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+]
+
+[project.optional-dependencies]
+docs = ["sphinx>=2.2.0"]
+dev = [
+    "black",
+    "coverage",
+    "ipython",
+    "isort",
+    "pre-commit",
+    "pytest",
+    "ruff",
+    "tox<4",
+]
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+platforms = ["any"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+"*" = [
+    "*.rst",
+]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["tests/"]
+
+[tool.setuptools_scm]
+write_to = "src/zino/version.py"
