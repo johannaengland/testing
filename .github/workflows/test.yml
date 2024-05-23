@@ -1,11 +1,11 @@
 name: Run test suite
 
-###########################################################
-# Start the job on pushes to master and all pull requests #
-###########################################################
+#########################################################
+# Start the job on pushes to main and all pull requests #
+#########################################################
 on:
   push:
-    branches: master
+    branches: main
   pull_request:
 
 ###############
