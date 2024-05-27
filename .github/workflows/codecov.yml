@@ -35,6 +35,10 @@ jobs:
               echo "PR_NUMBER=$pr_number" >> $GITHUB_ENV
             fi
 
+        - name: Echo PR number
+          run: |
+            echo $PR_NUMBER
+
         - name: Upload to Codecov
           uses: codecov/codecov-action@v4
           with:
