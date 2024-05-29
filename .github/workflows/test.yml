@@ -58,6 +58,14 @@ jobs:
           name: reports-${{ matrix.python-version }}
           path: |
             reports/**/*
+      
+      - name: List all files to check context
+        run: |
+          search_dir="reports/"
+          for entry in "$search_dir"/*
+          do
+            echo "$entry"
+          done
 
   upload-pr-number:
     name: Save PR number in artifact
