@@ -8,7 +8,7 @@ jobs:
     upload-codecov:
         name: "Upload code coverage"
         runs-on: ubuntu-latest
-        if: github.event.workflow_run.conclusion != 'skipped'
+        if: github.event.workflow_run.conclusion != 'skipped' && github.repository_owner == 'johannaengland'
 
         steps:
         - name: Download and Extract Artifacts
