@@ -39,7 +39,7 @@ jobs:
           if: ${{ hashFiles('artifacts/extra/parent_sha') != '' }}
           run: | 
             parent_sha=$(cat artifacts/extra/parent_sha)
-            re='^[0-9a-f]+$'
+            re='[0-9a-f]{40}'
             if [[ $parent_sha =~ $re ]] ; then
               echo "PARENT_SHA=$parent_sha" >> $GITHUB_ENV
             fi
