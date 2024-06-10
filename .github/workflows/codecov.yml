@@ -34,11 +34,6 @@ jobs:
             if [[ $pr_number =~ $re ]] ; then
               echo "PR_NUMBER=$pr_number" >> $GITHUB_ENV
             fi
-
-        - name: Show GitHub context
-          env:
-            GITHUB_CONTEXT: ${{ toJson(github) }}
-          run: echo "$GITHUB_CONTEXT"
           
 
         - name: Upload to Codecov
