@@ -83,3 +83,9 @@ jobs:
         with:
           name: pr_number
           path: pr/
+
+      - name: Show GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+        
