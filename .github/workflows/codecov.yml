@@ -27,18 +27,18 @@ jobs:
             done
 
         - name: Read PR number file
-          if: ${{ hashFiles('artifacts/pr_number/pr_number') != '' }}
+          if: ${{ hashFiles('artifacts/extra/pr_number') != '' }}
           run: | 
-            pr_number=$(cat artifacts/pr_number/pr_number)
+            pr_number=$(cat artifacts/extra/pr_number)
             re='^[0-9]+$'
             if [[ $pr_number =~ $re ]] ; then
               echo "PR_NUMBER=$pr_number" >> $GITHUB_ENV
             fi
 
         - name: Read parent SHA file
-          if: ${{ hashFiles('artifacts/parent_sha/parent_sha') != '' }}
+          if: ${{ hashFiles('artifacts/extra/parent_sha') != '' }}
           run: | 
-            parent_sha=$(cat artifacts/parent_sha/parent_sha)
+            parent_sha=$(cat artifacts/extra/parent_sha)
             re='[0-9a-f]{40}'
             if [[ $parent_sha =~ $re ]] ; then
               echo "PARENT_SHA=$parent_sha" >> $GITHUB_ENV
