@@ -38,7 +38,7 @@ jobs:
 
 
       - name: "Set up Python ${{ matrix.python-version }}"
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -59,19 +59,23 @@ jobs:
           path: |
             reports/**/*
 
-  upload-pr-number:
-    name: Save PR number in artifact
+  upload-pr-number-parent-sha:
+    name: Save PR number and parent SHA in artifact
     runs-on: ubuntu-latest
     if: ${{ github.event.number && always() }}
     env:
       PR_NUMBER: ${{ github.event.number }}
+      PARENT_SHA: ${{ github.event.pull_request.base.sha }}
     steps:
       - name: Make PR number file
         run: |
-          mkdir -p ./pr
-          echo $PR_NUMBER > ./pr/pr_number
-      - name: Upload PR number file
+          mkdir -p ./extra
+          echo $PR_NUMBER > ./extra/pr_number
+      - name: Make parent SHA file
+        run: |
+          echo $PARENT_SHA > ./extra/parent_sha
+      - name: Upload PR number file and parent SHA file
         uses: actions/upload-artifact@v4
         with:
-          name: pr_number
-          path: pr/
+          name: extra
+          path: extra/
