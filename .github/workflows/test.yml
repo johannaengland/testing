@@ -86,6 +86,6 @@ jobs:
 
       - name: Show GitHub context
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
+          GITHUB_CONTEXT: ${{ toJson(github.event) }}
         run: echo "$GITHUB_CONTEXT"
         
