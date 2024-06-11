@@ -1,7 +1,7 @@
 from testing.testing import calculate_diff, calculate_sum
 
 
-def test_simple():
+def test_calculate_sum():
     assert calculate_sum(1, 2) == 3
 
 
