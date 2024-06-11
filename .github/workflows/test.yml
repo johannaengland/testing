@@ -77,8 +77,8 @@ jobs:
     steps:
       - name: Echo Github context 
         env:
-            ONE: ${{ toJson(github.event.pull_request.head) }}
-            TWO: ${{ toJson(github.event.pull_request.base) }}
+            ONE: ${{ toJson(github.event.pull_request.head.sha) }}
+            TWO: ${{ toJson(github.event.pull_request.base.sha) }}
         run: echo "$ONE, $TWO"
       - name: Make PR number file
         run: |
