@@ -73,12 +73,13 @@ jobs:
     if: ${{ github.event.number && always() }}
     env:
       PR_NUMBER: ${{ github.event.number }}
-      PARENT_SHA: ${{ github.event.base.sha }}
+      PARENT_SHA: ${{ github.event }}
     steps:
       - name: Echo Github context 
         env:
-            GITHUB_CONTEXT: ${{ toJson(github.event.base) }}
-        run: echo "$GITHUB_CONTEXT"
+            ONE: ${{ toJson(github.event.pull_request.head) }}
+            TWO: ${{ toJson(github.event.pull_request.base) }}
+        run: echo "$ONE, $TWO"
       - name: Make PR number file
         run: |
           mkdir -p ./extra
