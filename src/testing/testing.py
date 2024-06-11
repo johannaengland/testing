@@ -10,5 +10,9 @@ def calculate_multiple(a: int, b: int) -> int:
     return a * b
 
 
+def calculate_quotient(a: int, b: int) -> int:
+    return round(a / b)
+
+
 def calculate_power(a: int, b: int) -> int:
     return a**b
