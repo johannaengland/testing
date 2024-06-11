@@ -73,7 +73,7 @@ jobs:
     if: ${{ github.event.number && always() }}
     env:
       PR_NUMBER: ${{ github.event.number }}
-      PARENT_SHA: ${{ github.event }}
+      PARENT_SHA: ${{ github.event.pull_request.base.sha }}
     steps:
       - name: Echo Github context 
         env:
