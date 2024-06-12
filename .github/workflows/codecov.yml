@@ -60,6 +60,7 @@ jobs:
             override_commit: ${{ github.event.workflow_run.head_sha}}
             commit_parent: ${{ env.PARENT_SHA }}
             override_pr: ${{ env.PR_NUMBER }}
+            override_build: ${{ github.event.workflow_run.id }}
 
         - name: "Publish test results"
           uses: EnricoMi/publish-unit-test-result-action@v2
