@@ -31,12 +31,6 @@ jobs:
               unzip -d "$name" "$name.zip"
             done
 
-        - name: Echo PR number
-          env: 
-            PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
-          run: |
-            echo $PR_NUMBER
-
         - name: Read PR number file
           if: ${{ hashFiles('artifacts/extra/pr_number') != '' }}
           run: | 
